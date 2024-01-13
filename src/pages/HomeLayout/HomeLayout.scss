@@ -1,0 +1,26 @@
+@import '../../scss/mixins.scss';
+
+
+.homelayout {
+  width: 100%;
+  min-height: 100vh; 
+  /* ----- to put footer sticky at the bottom of the page ----- */
+  @include flex(column, nowrap, flex-start, center);
+
+  &__main {
+    width: 100%;
+    padding-top: 52px;
+
+    @include min-768px {
+      padding-top: 60px;
+    }
+
+    @include min-992px {
+      padding-top: 70px;
+    }
+
+    @include min-1024px {
+      padding-top: 100px;
+    }
+  }
+}

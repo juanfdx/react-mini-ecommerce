@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap');
+
+/* Here we define the Custom properties */
+:root{
+  --color-primary   : #181818;
+  --color-secondary : #FFFFFF;
+
+  /* colors */
+  --font-title-color                : #181818;
+  --font-text-color                 : #666666;
+  --font-primary-button-color       : #FFFFFF;
+  --font-secondary-button-color     : #FFFFFF;
+  --font-price-color                : rgba(24,24,24,0.8);
+  --font-price-old-color            : rgba(24,24,24,0.5);
+  --font-title-hover-color          : #FFA832;
+
+  --bg-principal-color              : #FFFFFF;
+  --bg-header-color                 : #FFFFFF;
+  --bg-primary-button-color         : #FFA832;
+  --bg-secondary-button-color       : #222222;
+  --bg-hover-primary-button-color   : #222222;
+  --bg-hover-secondary-button-color : #FFA832;
+  --bg-banner-color                 : #FFFFFF61;
+  --bg-selection-color              : #FFA832;
+
+  --border-primary                  : #ECECEC;
+  --border-secondary                : #FFA832;
+  --line-separator-color            : rgba(102,102,102,0.15);
+  --canvas-overlay-color            : rgba(0,0,0,.2);
+
+  --stars-color                     : #FFD500;
+  
+
+  /* Typography */
+  --type-principal  : Helvetica, Arial, sans-serif;
+  --type-secondary  : Verdana;
+}
+
+
+/* We reset the margins and paddings of all labels */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video , button, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+
+/* We avoid problems with images */
+img , picture , video , iframe , figure{
+  // max-width: 100%;
+  width: 100%;
+  display: block;
+  /* optional */ object-fit: cover;        
+  /* optional */ object-position: center center;
+}
+
+
+/* We reset the links to function as boxes... */
+a {
+  display: block;
+}
+
+
+/* ...except those within paragraphs */
+p a {
+  display: inline;
+}
+
+
+/* We remove the dots from the <li> */
+li {
+  list-style-type: none;
+}
+
+
+/* We configure soft anchors */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* We deactivate default styles of the main text labels */
+h1 , h2 , h3 , h4 , h5 , h6 , p ,span , a , strong , blockquote , i , b , u , em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color:inherit;
+}
+
+
+/* We avoid problems with quotes pseudo-elements */
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+
+/* We configure the text we select */
+::selection {
+  color: var(--color-secondary);
+  background-color: var(--bg-selection-color);
+}
+
+
+/* We level typography and form placement problems */
+form , input, textarea, select , button , label{
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  display: block;
+  color:inherit;
+  box-sizing: border-box;
+  /* optional */ appearance: none;
+}
+
+
+/* We reset the tables */
+table , tr , td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/* We avoid problems with SVGs */
+svg{
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+
+/* We configure the typography for the entire website */
+body {
+  min-height  : 100vh;
+  font-size   : 100%;
+  // font-family : var(--type-principal);
+  color       : var(--color-primary);
+  background-color: var(--color-secondary);
+  /* optional */ line-height: 1.3;
+  /* optional */ hyphens: auto;
+  /* optional */ font-smooth: always;
+  /* optional */ -webkit-font-smoothing: antialiased;
+  /* optional */ -moz-osx-font-smoothing: grayscale;
+
+  font-family: 'Outfit', 'Segoe UI', 'Segoe UI Symbol', sans-serif;
+}
+
+/* Remove Arrows/Spinners from inputs */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+/* ----- TOAST STYLES ----- */
+.Toastify__toast-theme--light {
+  background-color: #efecec !important;
+}
+
+.Toastify__toast-icon {
+  width: 24px !important;
+}
+
+.Toastify__toast-body > div:last-child {
+  margin-left: 3px;
+}
+
+.toast-success .Toastify__toast-icon {
+  color: var(--toastify-color-success);
+}
+
+.toast-error .Toastify__toast-icon {
+  color: var(--toastify-color-error);
+}
+
+.toast-warning .Toastify__toast-icon {
+  color: var(--toastify-color-warning);
+}
+
+.toast-info .Toastify__toast-icon {
+  color: var(--toastify-color-info);
+}

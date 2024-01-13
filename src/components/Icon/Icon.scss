@@ -1,0 +1,56 @@
+@import '../../scss/mixins.scss';
+
+
+.icon {
+  width: 18px;
+  height: 18px;
+  transition: all .5s ease;
+
+  &--heart {
+    margin-top: 2px;
+    width: 20px;
+    height: 18px;
+    fill: none;
+  }
+
+  &--cart {
+    width: 18px;
+    height: 20px;
+    fill: none;
+  }
+
+  &--menu {
+    width: 24px;
+    height: 24px;
+  }
+
+  &--social {
+    width: 14px;
+    height: 14px;
+    color: var(--color-secondary);
+    pointer-events: none;
+    transition: none;
+
+    @include min-1024px {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &:hover {
+    color: var(--font-title-hover-color);
+  }
+  
+  &--arrow-right {
+    width: 24px;
+    height: 24px;
+    color: var(--color-primary);
+    transition: all .3s ease;
+  
+    &:hover {
+      transform: translate(5px);
+      color: var(--color-primary);
+    }
+  }
+
+}

@@ -1,0 +1,142 @@
+@import '../../scss/mixins.scss';
+
+
+.navbar {
+  width: 100%;
+  max-width: 1480px;
+  margin: auto;
+  padding: 0 25px;
+
+  @include flex(row, nowrap, space-between, center);
+
+
+  @include min-768px {
+    padding: 0 40px;
+  }
+
+  @include min-992px {
+    padding: 0 60px;
+    @include flex(row, nowrap, center, center);
+  }
+
+  @include min-1024px {
+    padding: 0 80px;
+  }
+
+  @include min-1280px {
+    padding: 0 100px;
+  }
+
+  /* ---- menu button ---- */
+  &__menu-btn {
+    cursor: pointer;
+
+    @include min-992px {
+      display: none;
+    }
+  } 
+  
+  /* ---- logo ---- */
+  &__link-logo {
+    display: none;
+    margin: 0 auto 2px 40px;
+    margin-left: calc(9% - 15px);
+
+    @include min-380px  {
+      display: flex;
+    }
+
+    @include min-768px {
+      margin: 0;
+      margin-left: 13.5%;
+    }
+
+    @include min-992px {
+      margin-left: 0;
+    }
+  }
+  
+  &__logo {
+    width: 91px;
+
+    @include min-768px {
+      width: 130px;
+    }
+  }
+
+  /* ---- nav links ---- */
+  &__ul {
+    width: 100%;
+    display: none;
+    
+    @include min-992px {
+      @include flex(row, nowrap, center, center);
+      
+    }
+  }
+
+  &__li {
+    margin: 0 5px;
+  }
+
+  &__link {
+    padding: 5px 10px;
+    font-size: 17px;
+    text-transform: capitalize;
+    color: var(--font-title-color);
+    font-weight: 500;
+    transition: all .5s ease;
+
+    &:hover {
+      color: var(--font-title-hover-color);
+    }
+  }
+
+  /* ---- icon links */
+  &__icon-ul {
+
+    @include flex(row, nowrap, center, center);
+    gap: 0 12px;
+  
+    @include min-768px {
+      gap: 0 18px;
+    }
+  }
+
+  &__icon-li {
+
+    &--heart {
+      display: none;
+
+      @include min-768px {
+        display: flex;
+      }
+    }
+
+    &--cart {
+      position: relative;
+    }
+  }
+
+  &__item-count {
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 19px;
+    color: var(--font-primary-button-color);
+    background-color: var(--bg-primary-button-color);
+
+    &:hover {
+
+      .icon {
+        background-color: aqua !important;
+      }
+    }
+  }
+}
