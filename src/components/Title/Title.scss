@@ -1,0 +1,20 @@
+@import '../../scss/mixins.scss';
+
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.1;
+
+  &--center {
+    text-align: center;
+  }
+
+  @include min-768px {
+    font-size: 32px;
+  }
+
+  @include min-1024px {
+    font-size: 36px;
+  }
+}

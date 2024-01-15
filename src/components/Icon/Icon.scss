@@ -53,4 +53,48 @@
     }
   }
 
+  &--addItem {
+    fill: none;
+    color: var(--color-secondary);
+    pointer-events: none;
+  }
+
+  &--service {
+    fill: none;
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+    transition: none;
+  }
+
+  &--exit {
+    width: 23px;
+    height: 23px;
+    color: var(--color-secondary);
+    pointer-events: none;
+    transition: none;
+
+    @media (orientation: landscape) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &--arrow-instagram{
+    width: 24px;
+    height: 24px;
+    color: var(--color-secondary);
+    pointer-events: none;
+    transition: none;
+  }
+
+  &--arrow-instagram-prev {
+    margin-right: 3px;
+
+  }
+}
+
+.instagram-slider-close-btn {
+  width: 28px;
+  height: 28px;
 }

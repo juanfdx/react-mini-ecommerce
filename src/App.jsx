@@ -1,8 +1,28 @@
+import './App.scss';
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 //pages components
-import { HomeLayout, Landing, Products, SingleProduct, About, Contact, Cart, Checkout, Orders, Login, Register, Error, Wishlist } from './pages';
+import { 
+  HomeLayout, 
+  Landing, 
+  Products, 
+  SingleProduct, 
+  About, 
+  Contact, 
+  Cart, 
+  Checkout, 
+  Orders, 
+  Login, 
+  Register, 
+  Error, 
+  Wishlist,
+} from './pages';
 //components
 import { ErrorElement } from './components';
+
+
+//LOADERS
+import { loader as landingLoader } from './pages';
+
 
 
 const router = createBrowserRouter([
@@ -14,7 +34,8 @@ const router = createBrowserRouter([
       { 
         index: true, 
         element: <Landing />, 
-        errorElement: <ErrorElement />
+        errorElement: <ErrorElement />,
+        loader: landingLoader
       },
       {
         path: "products",

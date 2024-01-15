@@ -1,0 +1,260 @@
+@import '../../scss/mixins.scss';
+
+
+.instagram {
+  width: 100%;
+  margin: 40px 0;
+
+  @include min-768px {
+    margin: 50px 0;
+  }
+
+  @include min-1280px {
+    margin: 70px 0;
+  }
+
+  @include min-1600px {
+    margin: 90px 0;
+  }
+
+
+  &__container {
+    width: 100%;
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 0 25px;
+
+    @include flex(column, nowrap, center, center);
+    gap: 30px;
+
+    @include min-768px {
+      padding: 0 40px;
+    }
+
+    @include min-992px {
+      padding: 0 60px;
+
+      @include flex(row, nowrap, space-between, center);
+      gap: 60px;
+    }
+
+    @include min-1024px {
+      padding: 0 80px;
+      gap: 90px;
+    }
+
+    @include min-1280px {
+      padding: 0 100px;
+    }
+  }
+
+  /* ----- text box ----- */
+  &__text-box {
+    width: 100%;
+
+    @include flex(column, nowrap, center, center);
+    gap: 20px;
+    
+    @include min-992px {
+      width: 30%;
+      
+      @include flex(column, nowrap, center, flex-start);
+    }
+
+  }
+
+  &__p {
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.4;
+    color: var(--font-title-color);
+    // no breaking words
+    hyphens: none;
+
+    @include min-768px {
+      text-align: left;
+    }
+  }
+
+  &__link {
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--font-title-color);
+    border: 1px solid var(--border-primary);
+    border-radius: 50px;
+    transition: all .3s ease;
+
+    &:hover {
+      color: var(--font-primary-button-color);
+      background-color: var(--bg-primary-button-color);
+      border-color: var(--bg-primary-button-color);
+    }
+  }
+  
+  /* ---- grid box ----- */
+  &__grid-box {
+    width: 100%;
+    // overflow: hidden;
+
+    @include min-992px {
+      width: 70%;
+    } 
+  }
+
+  /* ---- skeleton list __skeleton-list */
+  &__skeleton-list {
+    width: calc(100% + 20px);
+    transform: translateX(-10px);
+
+    display: grid;
+    
+    @include min-768px { 
+      height: calc(73.3vw - 50px);
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 37% auto auto 37%;
+      
+      grid-template-areas: 
+        "img1 img2 img3"
+        "img1 img5 img3"
+        "img1 img5 img3"
+        "img4 img5 img6"
+      ;
+    }
+
+    @include min-992px {
+      height: calc(42.5vw + 5px);
+    }
+
+    @include min-1024px {
+      height: calc(54vw - 148px);
+    }
+
+    @include min-1280px {
+      height: calc(48.4vw - 97px);
+    }
+
+    @include min-1500px {
+      max-height: 632px;
+    }
+  }
+
+  &__list {
+    width: calc(100% + 20px);
+    transform: translateX(-10px);
+
+    display: grid;
+    
+    @include min-768px {  
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 37% auto auto 37%;
+      
+      grid-template-areas: 
+        "img1 img2 img3"
+        "img1 img5 img3"
+        "img1 img5 img3"
+        "img4 img5 img6"
+      ;
+    }
+  }
+  
+  &__card {
+    padding: 10px;
+
+    @include min-768px {
+
+      &:first-child {
+        grid-area: img1;
+      }
+
+      &:nth-child(2) {
+        grid-area: img2;
+      }
+
+      &:nth-child(3) {
+        grid-area: img3;
+      }
+
+      &:nth-child(4) {
+        grid-area: img4;
+      }
+
+      &:nth-child(5) {
+        grid-area: img5;
+      }
+
+      &:nth-child(6) {
+        grid-area: img6;
+      }
+    }
+  }
+
+  &__card-link {
+    position: relative;
+    height: 100%;
+
+    &:hover {
+      // .instagram__img {
+      //   transform: scale(1.1);
+      // }
+
+      /* Now is the lazy-image class from the lazyLoadImage component L 14*/
+      .lazy-image  {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__img-wrapper {
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px 10px 0px 10px;
+  }
+
+  &__img {
+    transition: all .5s ease;
+  }
+
+  &__btn-wrapper {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 46px;
+    height: 46px;
+    padding: 8px;
+    background-color: var(--color-secondary);
+    border-radius: 10px 0 0 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-image: url('../../assets/images/corners/insta-corner.svg');
+      top: -10px;
+      right: 0px;
+      width: 10px;
+      height: 10px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('../../assets/images/corners/insta-corner.svg');
+      bottom: 0;
+      left: -10px;
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-primary-button-color);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    @include flex(row, nowrap, center, center);
+  }
+}
+

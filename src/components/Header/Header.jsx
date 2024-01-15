@@ -1,5 +1,5 @@
 import './Header.scss';
-import { Navbar } from '../Navbar/Navbar';
+import { Navbar } from '../';
 
 
 export const Header = () => {
