@@ -10,7 +10,6 @@ export const FeaturedProducts = () => {
 
   const { products } = useLoaderData();
 
-  console.log(featuredProducts(products));
   return (
     <section className='featured'>
       <div className='featured__container'>
